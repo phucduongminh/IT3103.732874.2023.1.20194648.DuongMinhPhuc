@@ -1,4 +1,4 @@
-package AimsProject;
+package Lab_2;
 
 public class Aims {
     public static void main(String[] args) {
@@ -7,7 +7,7 @@ public class Aims {
         DigitalVideoDisc dvd1 = new DigitalVideoDisc("Lion King","Animation","Roger Allers",87,2f);
         anOrder.addDigitalVideoDisc(dvd1);
 
-        DigitalVideoDisc dvd2 = new DigitalVideoDisc("Star Wars","Animation","George Lucas",87,2f);
+        DigitalVideoDisc dvd2 = new DigitalVideoDisc("Star Wars","Animation","George Lucas",87,9f);
         anOrder.addDigitalVideoDisc(dvd2);
 
         DigitalVideoDisc dvd3 = new DigitalVideoDisc("Aladin","Animation",10f);
