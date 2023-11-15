@@ -82,19 +82,19 @@ public class Cart {
         for(int i = 0; i < qtyOrdered; i++) {
             if(itemsOrdered[i].isMatch(id)) {
                 itemsOrdered[i].print();
-            } else {
-                System.out.println("Not Found DVD id: "+id);
+                return;
             }
         }
+        System.out.println("Not Found DVD id: "+id);
     }
 
     public void isMatch(String title){
         for(int i = 0; i < qtyOrdered; i++) {
             if(itemsOrdered[i].isMatch(title)) {
                 itemsOrdered[i].print();
-            } else {
-                System.out.println("Not Found DVD title: "+title);
+                return;
             }
         }
+        System.out.println("Not Found DVD title: "+title);
     }
 }
