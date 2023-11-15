@@ -1,3 +1,4 @@
+package OtherProjects.hust.soict.ite6.lab01.Lab_1;
 import java.util.Scanner;  
 public class SecondDegreeEquation  
 {  
