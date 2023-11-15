@@ -113,11 +113,11 @@ public class DigitalVideoDisc {
     }
 
     public boolean isMatch(int id) {
-        return this.id == id;
+        return id==this.id;
     }
     
     public boolean isMatch(String title) {
-        return this.title.equals(title);
+        return title.equals(this.title);
     }
 
     public void print() {
