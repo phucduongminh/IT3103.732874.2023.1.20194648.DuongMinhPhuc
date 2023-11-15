@@ -6,7 +6,7 @@ public class DigitalVideoDisc {
     private String title;
     private String category;
     private String director;
-    private int lenght;
+    private int length;
     private float cost;
 
     public DigitalVideoDisc(String title) {
@@ -14,12 +14,12 @@ public class DigitalVideoDisc {
         this.title = title;
     }
 
-    public DigitalVideoDisc(String title, String category, String director, int lenght, float cost) {
+    public DigitalVideoDisc(String title, String category, String director, int length, float cost) {
         this.id = ++nbDigitalVideoDiscs;
         this.title = title;
         this.category = category;
         this.director = director;
-        this.lenght = lenght;
+        this.length = length;
         this.cost = cost;
     }
 
@@ -81,17 +81,17 @@ public class DigitalVideoDisc {
     }
 
     /**
-     * @return int return the lenght
+     * @return int return the length
      */
-    public int getLenght() {
-        return lenght;
+    public int getLength() {
+        return length;
     }
 
     /**
-     * @param lenght the lenght to set
+     * @param length the length to set
      */
-    public void setLenght(int lenght) {
-        this.lenght = lenght;
+    public void setLength(int length) {
+        this.length = length;
     }
 
     /**
