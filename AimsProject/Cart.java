@@ -68,7 +68,7 @@ public class Cart {
         }
     }
 
-    public void printCart() {
+    public void print() {
         System.out.println("***********************CART***********************");
         System.out.println("Ordered items:");
         for(int i = 0; i < qtyOrdered; i++) {
@@ -76,5 +76,25 @@ public class Cart {
         }
         System.out.println("Total cost: " + totalCost());
         System.out.println("***************************************************");
+    }
+
+    public void isMatch(int id){
+        for(int i = 0; i < qtyOrdered; i++) {
+            if(itemsOrdered[i].isMatch(id)) {
+                itemsOrdered[i].print();
+            } else {
+                System.out.println("Not Found DVD id: "+id);
+            }
+        }
+    }
+
+    public void isMatch(String title){
+        for(int i = 0; i < qtyOrdered; i++) {
+            if(itemsOrdered[i].isMatch(title)) {
+                itemsOrdered[i].print();
+            } else {
+                System.out.println("Not Found DVD title: "+title);
+            }
+        }
     }
 }

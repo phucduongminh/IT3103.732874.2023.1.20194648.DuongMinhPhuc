@@ -112,4 +112,15 @@ public class DigitalVideoDisc {
         return id;
     }
 
+    public boolean isMatch(int id) {
+        return this.id == id;
+    }
+    
+    public boolean isMatch(String title) {
+        return this.title.equals(title);
+    }
+
+    public void print() {
+        System.out.println(id + " - " + title + " - " + category + " - " + director + " - " + length + ": " + cost + "$");
+    }
 }
