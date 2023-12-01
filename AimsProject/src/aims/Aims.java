@@ -1,5 +1,7 @@
 package AimsProject.src.aims;
 
+import AimsProject.src.aims.media.DigitalVideoDisc;
+
 public class Aims {
     public static void main(String[] args) {
         Cart anOrder = new Cart();
