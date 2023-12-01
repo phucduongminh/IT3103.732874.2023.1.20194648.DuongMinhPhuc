@@ -1,9 +1,6 @@
 package AimsProject.src.aims.media;
 
-public class DigitalVideoDisc extends Media {
-    private String director;
-    private int length;
-
+public class DigitalVideoDisc extends Disc {
     public DigitalVideoDisc(String title) {
         this.title = title;
     }
@@ -27,34 +24,6 @@ public class DigitalVideoDisc extends Media {
         this.category = category;
         this.director = director;
         this.cost = cost;
-    }
-
-    /**
-     * @return String return the director
-     */
-    public String getDirector() {
-        return director;
-    }
-
-    /**
-     * @param director the director to set
-     */
-    public void setDirector(String director) {
-        this.director = director;
-    }
-
-    /**
-     * @return int return the length
-     */
-    public int getLength() {
-        return length;
-    }
-
-    /**
-     * @param length the length to set
-     */
-    public void setLength(int length) {
-        this.length = length;
     }
 
     public boolean isMatch(int id) {
