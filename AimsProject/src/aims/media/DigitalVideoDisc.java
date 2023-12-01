@@ -1,21 +1,14 @@
 package AimsProject.src.aims.media;
 
-public class DigitalVideoDisc {
-    private static int nbDigitalVideoDiscs = 0;
-    private int id;
-    private String title;
-    private String category;
+public class DigitalVideoDisc extends Media {
     private String director;
     private int length;
-    private float cost;
 
     public DigitalVideoDisc(String title) {
-        this.id = ++nbDigitalVideoDiscs;
         this.title = title;
     }
 
     public DigitalVideoDisc(String title, String category, String director, int length, float cost) {
-        this.id = ++nbDigitalVideoDiscs;
         this.title = title;
         this.category = category;
         this.director = director;
@@ -24,46 +17,16 @@ public class DigitalVideoDisc {
     }
 
     public DigitalVideoDisc(String title, String category, float cost) {
-        this.id = ++nbDigitalVideoDiscs;
         this.title = title;
         this.category = category;
         this.cost = cost;
     }
 
     public DigitalVideoDisc(String title, String category, String director, float cost) {
-        this.id = ++nbDigitalVideoDiscs;
         this.title = title;
         this.category = category;
         this.director = director;
         this.cost = cost;
-    }
-
-    /**
-     * @return String return the title
-     */
-    public String getTitle() {
-        return title;
-    }
-
-    /**
-     * @param title the title to set
-     */
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    /**
-     * @return String return the category
-     */
-    public String getCategory() {
-        return category;
-    }
-
-    /**
-     * @param category the category to set
-     */
-    public void setCategory(String category) {
-        this.category = category;
     }
 
     /**
@@ -92,24 +55,6 @@ public class DigitalVideoDisc {
      */
     public void setLength(int length) {
         this.length = length;
-    }
-
-    /**
-     * @return float return the cost
-     */
-    public float getCost() {
-        return cost;
-    }
-
-    /**
-     * @param cost the cost to set
-     */
-    public void setCost(float cost) {
-        this.cost = cost;
-    }
-
-    public int getId() {
-        return id;
     }
 
     public boolean isMatch(int id) {

@@ -2,82 +2,32 @@ package AimsProject.src.aims.media;
 
 import java.util.ArrayList;
 import java.util.List;
+public class Book extends Media{
 
-public class Book {
-    private int id;
-    private String title;
-    private String category;
-    private float cost;
     private List<String> authors = new ArrayList<>();
-
-    /**
-     * @return int return the id
-     */
-    public int getId() {
-        return id;
+    public Book() {
+        super();
     }
-
-    /**
-     * @param id the id to set
-     */
-    public void setId(int id) {
-        this.id = id;
+    public void addAuthor(String authorName) {
+        if (authors.contains(authorName)) {
+            System.out.println("Author already exists");
+        } else {
+            authors.add(authorName);
+            System.out.println("Author added");
+        }
     }
-
-    /**
-     * @return String return the title
-     */
-    public String getTitle() {
-        return title;
+    public void removeAuthor(String authorName) {
+        if (authors.contains(authorName)) {
+            authors.remove(authorName);
+            System.out.println("Author removed");
+        } else {
+            System.out.println("Author not found");
+        }
     }
-
-    /**
-     * @param title the title to set
-     */
-    public void setTitle(String title) {
-        this.title = title;
+    public void printAuthors() {
+        System.out.println("Authors:");
+        for (String author : authors) {
+            System.out.println(author);
+        }
     }
-
-    /**
-     * @return String return the category
-     */
-    public String getCategory() {
-        return category;
-    }
-
-    /**
-     * @param category the category to set
-     */
-    public void setCategory(String category) {
-        this.category = category;
-    }
-
-    /**
-     * @return float return the cost
-     */
-    public float getCost() {
-        return cost;
-    }
-
-    /**
-     * @param cost the cost to set
-     */
-    public void setCost(float cost) {
-        this.cost = cost;
-    }
-
-    /**
-     * @return List<String> return the authors
-     */
-    public List<String> getAuthors() {
-        return authors;
-    }
-
-    /**
-     * @param authors the authors to set
-     */
-    public void setAuthors(List<String> authors) {
-        this.authors = authors;
-    }
-
 }
