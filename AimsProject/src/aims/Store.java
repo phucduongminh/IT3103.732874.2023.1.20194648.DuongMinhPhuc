@@ -1,4 +1,4 @@
-package AimsProject;
+package AimsProject.src.aims;
 
 public class Store {
     DigitalVideoDisc[] itemsInStore = new DigitalVideoDisc[100];

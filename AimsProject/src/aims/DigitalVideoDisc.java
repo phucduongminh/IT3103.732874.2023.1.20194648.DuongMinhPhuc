@@ -1,4 +1,4 @@
-package AimsProject;
+package AimsProject.src.aims;
 
 public class DigitalVideoDisc {
     private static int nbDigitalVideoDiscs = 0;
