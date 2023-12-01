@@ -1,4 +1,4 @@
-package AimsProject.src.aims;
+package AimsProject.src.aims.cart;
 
 import java.util.ArrayList;
 import AimsProject.src.aims.media.Media;

@@ -1,5 +1,6 @@
-package AimsProject.src.aims;
+package AimsProject.src.aims.store;
 
+import AimsProject.src.aims.cart.Cart;
 import AimsProject.src.aims.media.DigitalVideoDisc;
 
 public class Aims {

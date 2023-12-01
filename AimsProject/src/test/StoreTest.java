@@ -1,7 +1,7 @@
 package AimsProject.src.test;
 
-import AimsProject.src.aims.Store;
 import AimsProject.src.aims.media.DigitalVideoDisc;
+import AimsProject.src.aims.store.Store;
 
 public class StoreTest {
     public static void main(String args[]) {
@@ -10,10 +10,10 @@ public class StoreTest {
         DigitalVideoDisc dvd3 = new DigitalVideoDisc("Aladdin", "Animation", 18.99f);;
 
         Store store = new Store();
-        store.addDVD(dvd1); // The disc has been added
-        store.addDVD(dvd2); // The disc has been added
-        store.addDVD(dvd3); // The disc has been added
-        store.removeDVD(dvd2); // The disc has been removed
-        store.removeDVD(dvd2); // The disc is not in the store
+        store.addMedia(dvd1); // The disc has been added
+        store.addMedia(dvd2); // The disc has been added
+        store.addMedia(dvd3); // The disc has been added
+        store.removeMedia(dvd2); // The disc has been removed
+        store.removeMedia(dvd2); // The disc is not in the store
     }
 }

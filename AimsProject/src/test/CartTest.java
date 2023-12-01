@@ -1,6 +1,6 @@
 package AimsProject.src.test;
 
-import AimsProject.src.aims.Cart;
+import AimsProject.src.aims.cart.Cart;
 import AimsProject.src.aims.media.DigitalVideoDisc;
 
 public class CartTest {
