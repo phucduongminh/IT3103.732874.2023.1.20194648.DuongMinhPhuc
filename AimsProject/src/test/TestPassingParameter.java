@@ -1,6 +1,6 @@
 package AimsProject.src.test;
 
-import AimsProject.src.aims.DigitalVideoDisc;
+import AimsProject.src.aims.media.DigitalVideoDisc;
 
 public class TestPassingParameter {
     public static void swap(Object o1, Object o2){

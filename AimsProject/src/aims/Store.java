@@ -1,5 +1,7 @@
 package AimsProject.src.aims;
 
+import AimsProject.src.aims.media.DigitalVideoDisc;
+
 public class Store {
     DigitalVideoDisc[] itemsInStore = new DigitalVideoDisc[100];
     int qtyInStore = 0;
