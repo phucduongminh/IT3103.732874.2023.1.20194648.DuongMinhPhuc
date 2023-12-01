@@ -47,4 +47,14 @@ public abstract class Media {
         this.cost = cost;
     }
 
+    public boolean isMatch(int id) {
+        return id==this.id;
+    }
+    
+    public boolean isMatch(String title) {
+        return title.equals(this.title);
+    }
+
+    public void print() {
+    }
 }

@@ -1,6 +1,6 @@
 package AimsProject.src.aims.media;
 
-public class DigitalVideoDisc extends Disc {
+public class DigitalVideoDisc extends Disc implements Playable {
     public DigitalVideoDisc(String title) {
         this.title = title;
     }
@@ -26,15 +26,16 @@ public class DigitalVideoDisc extends Disc {
         this.cost = cost;
     }
 
-    public boolean isMatch(int id) {
-        return id==this.id;
-    }
-    
-    public boolean isMatch(String title) {
-        return title.equals(this.title);
-    }
-
+    @Override
     public void print() {
         System.out.println(id + " - " + title + " - " + category + " - " + director + " - " + length + ": " + cost + "$");
+    }
+
+    public void play() {
+
+        System.out.println("Playing Track: " + this.getTitle());
+
+        System.out.println("Track length: " + this.getLength());
+
     }
 }
