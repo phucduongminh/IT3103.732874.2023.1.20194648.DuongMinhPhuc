@@ -1,27 +1,28 @@
 package AimsProject.src.aims.store;
 
-import AimsProject.src.aims.cart.Cart;
-import AimsProject.src.aims.media.DigitalVideoDisc;
+import java.util.List;
 
+import AimsProject.src.aims.media.Book;
+import AimsProject.src.aims.media.CompactDisc;
+import AimsProject.src.aims.media.DigitalVideoDisc;
+import AimsProject.src.aims.media.Media;
+
+import java.util.ArrayList;
 public class Aims {
     public static void main(String[] args) {
-        Cart anOrder = new Cart();
+        List<Media> mediae = new ArrayList<>();
 
-        DigitalVideoDisc dvd1 = new DigitalVideoDisc("Lion King","Animation","Roger Allers",87,2f);
-        anOrder.addDigitalVideoDisc(dvd1);
+        CompactDisc cd1 = new CompactDisc("CD1");
+        DigitalVideoDisc dvd1 = new DigitalVideoDisc("DVD1");
+        Book book1 = new Book("BOOK1");
 
-        DigitalVideoDisc dvd2 = new DigitalVideoDisc("Star Wars","Animation","George Lucas",87,9f);
-        anOrder.addDigitalVideoDisc(dvd2);
+        mediae.add(cd1);
+        mediae.add(dvd1);
+        mediae.add(book1);
 
-        DigitalVideoDisc dvd3 = new DigitalVideoDisc("Aladin","Animation",10f);
-        anOrder.addDigitalVideoDisc(dvd3);
-
-        System.out.println("Total Cost:");
-        System.err.println(anOrder.totalCost());
-
-        anOrder.removeDigitalVideoDisc(dvd3);
-
-        System.out.println("Total Cost:");
-        System.err.println(anOrder.totalCost());
+        for (Media media : mediae) {
+            System.out.println(media.toString());
+        }
     }
+
 }

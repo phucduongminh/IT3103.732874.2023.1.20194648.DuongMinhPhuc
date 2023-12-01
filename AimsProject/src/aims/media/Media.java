@@ -1,5 +1,7 @@
 package AimsProject.src.aims.media;
 
+import java.util.Comparator;
+
 public abstract class Media {
     protected int id;
     protected String title;
@@ -57,4 +59,13 @@ public abstract class Media {
 
     public void print() {
     }
+
+    @Override
+    public boolean equals(Object o) {
+        Media media = (Media) o;
+        return media.getTitle().equals(this.getTitle());
+    }
+
+    public static final Comparator<Media> COMPARE_BY_TITLE_COST = new MediaComparatorByTitleCost();
+    public static final Comparator<Media> COMPARE_BY_COST_TITLE = new MediaComparatorByCostTitle();
 }
