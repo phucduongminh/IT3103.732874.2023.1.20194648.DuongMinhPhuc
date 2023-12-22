@@ -1,11 +1,12 @@
-package AimsProject.src.aims.cart;
+package AimsProject.src.aims;
 
 import java.util.ArrayList;
 
 import javafx.collections.ObservableList;
 import javafx.collections.FXCollections;
-import AimsProject.src.aims.exception.LimitException;
+
 import AimsProject.src.aims.media.Media;
+import AimsProject.src.aims.exception.LimitException;
 
 public class Cart {
 	private ObservableList<Media> itemsOrdered = 

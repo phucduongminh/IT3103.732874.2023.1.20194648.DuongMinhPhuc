@@ -1,57 +1,114 @@
 package AimsProject.src.aims.media;
 
 import java.util.ArrayList;
-import java.util.List;
-public class CompactDisc extends Disc implements Playable{
-    private String artist;
-    private List<Track> tracks = new ArrayList<>();
+//import AimsProject.src.aims.media.Track;
+import AimsProject.src.aims.exception.PlayerException;
+import AimsProject.src.aims.exception.DataConstraintsException;
 
-    public String getArtist() {
-        return artist;
-    }
-    public CompactDisc() {
-        super();
-    }
-    public CompactDisc(String artist) {
-        super();
-        this.artist = artist;
-    }
-    public CompactDisc(String artist, List<Track> tracks) {
-        this(artist);
-        this.tracks = tracks;
-    }
+public class CompactDisc extends Disc implements Playable {
 
-    public void addTrack(Track track) {
-        if(tracks.contains(track))
-            System.out.println("Track already exists.");
-        else {
-            tracks.add(track);
-            System.out.println("Track added");
-        }
-    }
+	private String artist;
+	private ArrayList<Track> tracks = new ArrayList<Track>();
+	
+	public CompactDisc() {
+		// TODO Auto-generated constructor stub
+	}
+	
+	public CompactDisc(String title, String artist) {
+		this(title);
+		this.setArtist(artist);
+	}
+	
+	
+	public CompactDisc(String title){
+		super(title);
+	}
+	
+	public CompactDisc(String title, String category, float cost) throws DataConstraintsException {
+		this(title);
+		this.setCategory(category);
+		this.setCost(cost);
+	}
 
-    public void removeTrack(Track track) {
-        if(tracks.contains(track)) {
-            tracks.remove(track);
-            System.out.println("Track removed");
-        }
-        else
-            System.out.println("Track not found");
-    }
+	public CompactDisc(String artist, String category, String title, float cost) {
+		this(title);
+		this.setCategory(category);
+		this.setCost(cost);
+		this.setArtist(artist);
 
-    @Override
-    public int getLength() {
-        int totalLength = 0;
-        for(Track track : tracks) {
-            totalLength += track.getLength();
-        }
-        return totalLength;
-    }
+	}
 
-    public void play() {
-        System.out.println("There are " + tracks.size() + " tracks in this CD");
-        for(Track track : tracks) {
-            track.play();
-        }
-    }
+
+	public void addTrack(Track newTrack) {
+		if(this.tracks.contains(newTrack)) {
+			System.out.println("Track already exists!");
+			return ;
+		}
+		this.tracks.add(newTrack);
+		System.out.println("Track is added!");
+	}
+	public void removeTrack(Track track) {
+		if(this.tracks.contains(track)) {
+			this.tracks.remove(track);
+			System.out.println("Track is removed!");
+			return ;
+		}
+		System.out.println("Track does not exist!");
+	}
+	public void play() throws PlayerException {
+		System.out.println(String.format("CD %s from artist %s\nThis CD contains %dtracks",
+										  this.getTitle(), this.artist, this.tracks.size()));
+		if (this.getLength() > 0) {
+			for (Track t: tracks) {
+				try {
+					t.play();
+				} catch (PlayerException e) {
+					throw e;
+				}
+			}
+		}
+		else {
+			throw new PlayerException("ERROR: CD length is non-positive!");
+		}
+	}
+	
+	@Override
+	public int getLength() {
+		int sum = 0;
+		for(Track track: tracks) {
+			sum += track.getLength();
+		}
+		return sum;
+	}
+	
+	public String getArtist() {
+		return artist;
+	}
+	public void setArtist(String artist) {
+		this.artist = artist;
+	}
+//	public ArrayList<Track> getTrack() {
+//		return track;
+//	}
+//	public void setTrack(ArrayList<Track> track) {
+//		this.track = track;
+//	}
+	
+	@Override
+	public String toString() {
+		return ("CD - " + this.getTitle() 
+		+ " - " + this.getCategory()
+		+ " - " + this.getDirector()
+		+ " - " + this.getLength()
+		+ ": " + this.getCost() + "$");
+	}
+
+	public ArrayList<Track> getTracks() {
+		return tracks;
+	}
+
+	public void setTracks(ArrayList<Track> tracks) {
+		this.tracks = tracks;
+	}
+
 }

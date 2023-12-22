@@ -2,37 +2,60 @@ package AimsProject.src.aims.media;
 
 import java.util.ArrayList;
 import java.util.List;
-public class Book extends Media{
 
-    private List<String> authors = new ArrayList<>();
-    public Book() {
-        super();
-    }
+import AimsProject.src.aims.exception.DataConstraintsExceptioDataConstraintsException;
 
-    public Book(String title) {
-        super(title);
-    }
+public class Book extends Media {
 
-    public void addAuthor(String authorName) {
-        if (authors.contains(authorName)) {
-            System.out.println("Author already exists");
-        } else {
-            authors.add(authorName);
-            System.out.println("Author added");
-        }
-    }
-    public void removeAuthor(String authorName) {
-        if (authors.contains(authorName)) {
-            authors.remove(authorName);
-            System.out.println("Author removed");
-        } else {
-            System.out.println("Author not found");
-        }
-    }
-    public void printAuthors() {
-        System.out.println("Authors:");
-        for (String author : authors) {
-            System.out.println(author);
-        }
-    }
+	private List<String> authors = new ArrayList<String>();
+	
+	public Book() {
+	}
+	
+	public Book(String title) {
+		super(title);
+	}
+	
+	public Book(String title, String category, float cost) throws DataConstraintsException {
+		super(title,category,cost);
+	}
+	
+	public Book(int id,String title, String category, float cost) {
+		super(id,title,category,cost);
+	}
+	
+	public void addAuthor(String authorName) {
+		for(String author: authors) {
+			if(author.equals(authorName)) {
+				System.out.println("Author is already added!");
+				return ;
+			}
+		}
+		authors.add(authorName);
+		System.out.println("Author is added!");
+	}
+	public void removeAuthor(String authorName) {
+		for(String author: authors) {
+			if(author.equals(authorName)) {
+				authors.remove(authorName);
+				System.out.println("Author is removed!");
+				return ;
+			}
+		}
+		System.out.println("Author is not added yet!");
+	}
+	public List<String> getAuthors() {
+		return authors;
+	}
+	
+	@Override
+	public String toString() {
+		return ("Book - " + this.getTitle() 
+		+ " - " + this.getCategory()
+		+ ": " + this.getCost() + "$");
+	}
+
+	public void setAuthors(List<String> authors) {
+		this.authors = authors;
+	}
 }
